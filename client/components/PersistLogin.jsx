@@ -5,6 +5,7 @@ import { selectCurrentToken } from "@/redux/auth/authSlice";
 import { useRefreshMutation } from "@/redux/auth/authApiSlice";
 import Nav from "@/pages/dashboard/_components/Nav";
 import SideNav from "@/pages/dashboard/_components/SideNav";
+import LoginPage from "@/pages/login";
 
 const PersistLogin = ({ children }) => {
   const token = useSelector(selectCurrentToken);
@@ -49,12 +50,8 @@ const PersistLogin = ({ children }) => {
     //token: no
     console.log("error");
     content = (
-      <p className="">
-        {`${error?.data?.message} - `}
-        <Link href="/login" className="text-light-1">
-          Please login again
-        </Link>
-        .
+      <p>
+        <LoginPage />
       </p>
     );
   } else if (isSuccess && trueSuccess) {

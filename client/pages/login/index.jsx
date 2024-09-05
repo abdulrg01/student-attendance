@@ -60,8 +60,8 @@ export default function LoginPage() {
   const errClass = errMsg ? "border-red-500" : "border-red-500";
 
   return (
-    <div className="bg-purple-100 py-6">
-      <div className="max-w-[25rem] w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 bg-white shadow-xl shadow-slate-400">
+    <div className="bg-gray-900 py-6">
+      <div className="max-w-[25rem] w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 bg-white shadow-md shadow-slate-600">
         <div className="flex flex-row gap-2 items-center mb-5">
           <img
             src="/logo-icon.png"
