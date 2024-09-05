@@ -8,7 +8,7 @@ export default function Students() {
   const { data, refetch } = useGetStudentsQuery();
   return (
     <PersistLogin>
-      <div>
+      <div className="pt-10">
         <h2 className="font-bold text-2xl flex justify-between items-center">
           Students <AddNewStudents refetch={refetch} />
         </h2>

@@ -11,10 +11,15 @@ export default function StatusList({ students, selectedMonth }) {
       let totalDays = 0;
       let totalPresent = 0;
 
+      // Check if selectedMonth is a string, if not convert it
+      const selectedMonthValue =
+        typeof selectedMonth === "string"
+          ? parseInt(selectedMonth.split("-")[1], 10)
+          : new Date(selectedMonth).getMonth() + 1; // Default to the current month if not a string
+
       students.forEach((student) => {
         student.attendance.forEach((att) => {
           const attendanceMonth = new Date(att.date).getMonth() + 1;
-          const selectedMonthValue = parseInt(selectedMonth.split("-")[1], 10);
 
           if (attendanceMonth === selectedMonthValue) {
             totalDays += 1;
@@ -39,7 +44,7 @@ export default function StatusList({ students, selectedMonth }) {
       <Card
         icon={<GraduationCap />}
         title="Total Student"
-        value={students}
+        value={students && students?.length} // Assuming `students` is an array
       />
       <Card
         icon={<TrendingUp />}

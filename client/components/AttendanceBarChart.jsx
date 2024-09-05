@@ -28,7 +28,7 @@ const AttendanceBarChart = ({ date }) => {
 
       // Get the last 7 days
       const last7Days = Array.from({ length: 7 }, (_, i) =>
-        moment(selectedDate).subtract(i, "days").format("YYYY-MM-DD")
+        moment(date).subtract(i, "days").format("YYYY-MM-DD")
       ).reverse();
 
       last7Days.forEach((day) => {

@@ -19,12 +19,18 @@ export default function HomePage() {
 
   return (
     <PersistLogin>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pt-10">
         <h1 className="text-3xl font-bold my-5">Dashboard</h1>
 
         <div className="flex items-center gap-4">
-          <MonthSelection selectedMonth={setSelectedMonth} />
-          <Grade selectedGrad={setSelectedGrad} />
+          <div className="flex items-center md:flex-row flex-col gap-2">
+            <label>Select Month:</label>
+            <MonthSelection selectedMonth={(v) => setSelectedMonth(v)} />
+          </div>
+          <div className="flex items-center md:flex-row flex-col gap-2">
+            <label>Select Grade:</label>
+            <Grade selectedGrad={(v) => setSelectedGrad(v)} />
+          </div>
         </div>
       </div>
 

@@ -37,33 +37,6 @@ export default function SideNav() {
             })}
           </ul>
 
-          <ul class="font-medium mt-5">
-            {navLinks.slice(6).map((link, i) => {
-              const isActive = link.route === pathname;
-
-              return (
-                <li
-                  className={`flex justify-center items-center w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:underline hover:shadow-inner group ${
-                    isActive ? "text-[#FAFAFA]" : "text-[#969697]"
-                  }`}
-                  key={i}
-                >
-                  <Link
-                    className={`${
-                      isActive && "font-bold"
-                    } flex size-full gap-2 p-3 text-sm`}
-                    href={link.route}
-                  >
-                    <div className={`${isActive && "brightness-200"}`}>
-                      <link.icon className="h-5 w-5" />
-                    </div>
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
           <Link href="/profile" className="px-3 flex items-center gap-3">
             <img
               src="/profile.png"

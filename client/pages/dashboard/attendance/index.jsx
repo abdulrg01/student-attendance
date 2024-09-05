@@ -25,7 +25,7 @@ export default function Attendance() {
 
   return (
     <PersistLogin>
-      <div className="p-10">
+      <div className="pt-10 px-3">
         <h2 className="text-2xl font-bold">Attendance</h2>
         {/*Search Option */}
         <div className="flex gap-5 p-5 border rounded-lg shadow-sm my-5 items-center">
