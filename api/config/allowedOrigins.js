@@ -1,6 +1,3 @@
-const allowedOrigins = [
-    'https://student-attendance-kappa.vercel.app/',
-    'http://localhost:3000'
-]
+const allowedOrigins = ["https://student-attendance-kappa.vercel.app"];
 
-module.exports = allowedOrigins
+module.exports = allowedOrigins;
