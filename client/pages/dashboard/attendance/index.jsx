@@ -5,23 +5,27 @@ import AttendanceGrid from "./components/AttendanceGrid";
 import { useStudentsRecordQuery } from "@/redux/students/studentsApiSlice";
 import moment from "moment";
 import PersistLogin from "@/components/PersistLogin";
+import { useSelector } from "react-redux";
+import { selectCurrentToken } from "@/redux/auth/authSlice";
 
 export default function Attendance() {
+  const token = useSelector(selectCurrentToken);
   const [selectedMonth, setSelectedMonth] = useState();
   const [selectedGrad, setSelectedGrad] = useState();
 
   const month = selectedMonth ? moment(selectedMonth).format("YYYY/MM") : null;
 
-  const { data, refetch } = useStudentsRecordQuery({
+  const { data } = useStudentsRecordQuery({
     month,
     grade: selectedGrad,
   });
 
   useEffect(() => {
-    if (selectedGrad && selectedMonth) {
-      refetch();
+    if (token) {
+      setSelectedGrad("5th");
+      setSelectedMonth("2024-08-01");
     }
-  }, [selectedGrad, selectedMonth, refetch]);
+  }, [token]);
 
   return (
     <PersistLogin>

@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { CalendarDays } from "lucide-react";
 import { addMonths } from "date-fns";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import moment from "moment";
 import { Calendar } from "./ui/calendar";
+import { selectCurrentToken } from "@/redux/auth/authSlice";
+import { useSelector } from "react-redux";
 
 export default function MonthSelection({ selectedMonth }) {
-  const nextMonth = addMonths(new Date(), 0);
-  const [month, setMonth] = useState(nextMonth);
+  const token = useSelector(selectCurrentToken);
+  const [month, setMonth] = useState();
+
+  useEffect(() => {
+    if (token) {
+      setMonth("2024-08-01");
+    }
+  }, [token]);
 
   return (
     <div>

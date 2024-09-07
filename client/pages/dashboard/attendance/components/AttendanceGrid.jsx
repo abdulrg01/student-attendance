@@ -9,10 +9,6 @@ import {
 } from "@/redux/students/studentsApiSlice";
 import { toast } from "sonner";
 
-const pagination = true;
-const paginationPageSize = 10;
-const paginationPageSizeSelector = [25, 50, 100];
-
 export default function AttendanceGrid({ selectedMonth, students }) {
   const [updateAttendance, { isSuccess }] = useUpdateAttendanceMutation();
   const [deleteAttendance, { isSuccess: delSuccess }] =
@@ -108,9 +104,6 @@ export default function AttendanceGrid({ selectedMonth, students }) {
           onCellValueChanged={(e) =>
             attendanceChange(e.colDef.field, e.data.id, e.newValue, e.data.name)
           }
-          pagination={pagination}
-          paginationPageSize={paginationPageSize}
-          paginationPageSizeSelector={paginationPageSizeSelector}
         />
       </div>
     </div>

@@ -1,5 +1,5 @@
 const Student = require("../models/students");
-const moment = require("moment")
+const moment = require("moment");
 
 const getStudents = async (req, res) => {
   const students = await Student.find().lean();
@@ -122,8 +122,19 @@ const attendance = async (req, res) => {
 
 const attendanceLast7days = async (req, res) => {
   const { date } = req.query;
-  const startDate = moment(date).subtract(6, "days").startOf("day");
-  const endDate = moment(date).endOf("day");
+
+  // Parse the date using ISO format to avoid deprecation warning
+  const parsedDate = moment(date, moment.ISO_8601, true); // Only accept ISO format
+
+  if (!parsedDate.isValid()) {
+    return res
+      .status(400)
+      .json({ message: "Invalid date format. Use ISO format (YYYY-MM-DD)." });
+  }
+
+  // Calculate the start and end dates for the 7-day range
+  const startDate = parsedDate.subtract(6, "days").startOf("day").toDate();
+  const endDate = parsedDate.add(6, "days").endOf("day").toDate();
 
   const attendanceData = await Student.aggregate([
     {
@@ -132,8 +143,8 @@ const attendanceLast7days = async (req, res) => {
     {
       $match: {
         "attendance.date": {
-          $gte: startDate.toDate(),
-          $lte: endDate.toDate(),
+          $gte: startDate,
+          $lte: endDate,
         },
       },
     },
@@ -147,6 +158,34 @@ const attendanceLast7days = async (req, res) => {
 
   res.json(attendanceData);
 };
+
+// const attendanceLast7days = async (req, res) => {
+//   const { date } = req.query;
+//   const startDate = moment(date).subtract(6, "days").startOf("day");
+//   const endDate = moment(date).endOf("day");
+
+//   const attendanceData = await Student.aggregate([
+//     {
+//       $unwind: "$attendance",
+//     },
+//     {
+//       $match: {
+//         "attendance.date": {
+//           $gte: startDate.toDate(),
+//           $lte: endDate.toDate(),
+//         },
+//       },
+//     },
+//     {
+//       $project: {
+//         date: "$attendance.date",
+//         isPresent: "$attendance.isPresent",
+//       },
+//     },
+//   ]);
+
+//   res.json(attendanceData);
+// };
 
 const updateStudent = async (req, res) => {};
 

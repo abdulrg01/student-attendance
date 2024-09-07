@@ -18,7 +18,7 @@ export default function Nav() {
                 href="/"
                 className="flex items-center gap-2 md:py-2 whitespace-nowrap"
               >
-                <Image src="/logo-icon.png" width={5} height={5} alt="logo" />
+                <Image src="/logo-icon.png" width={20} height={20} alt="logo" />
                 <p className="font-bold text-[17px] hover:text-[#4F2EFF] text-[#FAFAFA] dark:hover:text-blue-500">
                   schoolcn
                 </p>
@@ -325,8 +325,8 @@ export default function Nav() {
               >
                 <span className="sr-only">Open user menu</span>
                 <Image
-                  width={7}
-                  height={7}
+                  width={20}
+                  height={20}
                   className="rounded-full"
                   src="/profile.png"
                   alt="user photo"

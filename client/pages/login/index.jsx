@@ -18,13 +18,19 @@ export default function LoginPage() {
   const [show, setShow] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
-  const [login, { isLoading }] = useLoginMutation();
+  const [login, { isSuccess }] = useLoginMutation();
 
   // useEffect(() => {
   //   if (session) {
   //     router.push("/");
   //   }
   // }, [session]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      router.push("/");
+    }
+  }, [isSuccess]);
 
   useEffect(() => {
     setErrMsg("");

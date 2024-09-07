@@ -3,6 +3,7 @@ import { setCredentials } from "../auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: "https://student-attendance-drdy.onrender.com",
+  // baseUrl: "http://localhost:3500",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.token;
