@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import PersistLogin from "./PersistLogin";
-import MonthSelection from "./MonthSelection";
-import Grade from "./Grade";
+import PersistLogin from "../../../components/PersistLogin";
+import MonthSelection from "../../../components/MonthSelection";
+import Grade from "../../../components/Grade";
 import { useStudentsRecordQuery } from "@/redux/students/studentsApiSlice";
 import moment from "moment";
 import StatusList from "@/pages/dashboard/_components/StatusList";
-import AttendanceBarChart from "./AttendanceBarChart";
+import AttendanceBarChart from "../../../components/AttendanceBarChart";
 import { useSelector } from "react-redux";
 import { selectCurrentToken } from "@/redux/auth/authSlice";
 
-export default function HomePage() {
-  const token = useSelector(selectCurrentToken)
+export default function Home() {
+  const token = useSelector(selectCurrentToken);
   const [selectedMonth, setSelectedMonth] = useState();
   const [selectedGrad, setSelectedGrad] = useState();
 
@@ -22,10 +22,10 @@ export default function HomePage() {
 
   useEffect(() => {
     if (token) {
-      setSelectedGrad("5th")
-      setSelectedMonth("2024-08-01")
+      setSelectedGrad("5th");
+      setSelectedMonth("2024-08-01");
     }
-  }, [token])
+  }, [token]);
 
   return (
     <PersistLogin>

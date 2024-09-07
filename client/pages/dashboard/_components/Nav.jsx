@@ -86,11 +86,11 @@ export default function Nav() {
                     >
                       <div className="flex-shrink-0">
                         <Image
-                          width={11}
-                          height={11}
+                          width={40}
+                          height={40}
                           className="rounded-full"
                           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                          alt="Bonnie Green avatar"
+                          alt="avatar"
                         />
                         <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-[#4F2EFF] dark:border-gray-700">
                           <svg
@@ -124,11 +124,11 @@ export default function Nav() {
                     >
                       <div className="flex-shrink-0">
                         <Image
-                          width={11}
-                          height={11}
+                          width={40}
+                          height={40}
                           className="rounded-full"
                           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                          alt="Jese Leos avatar"
+                          alt="avatar"
                         />
                         <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-gray-900 rounded-full border border-white dark:border-gray-700">
                           <svg
@@ -164,11 +164,11 @@ export default function Nav() {
                     >
                       <div className="flex-shrink-0">
                         <Image
-                          width={11}
-                          height={11}
+                          width={40}
+                          height={40}
                           className="rounded-full"
                           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
-                          alt="Joseph McFall avatar"
+                          alt=" avatar"
                         />
                         <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-red-600 rounded-full border border-white dark:border-gray-700">
                           <svg
@@ -204,11 +204,11 @@ export default function Nav() {
                     >
                       <div className="flex-shrink-0">
                         <Image
-                          width={11}
-                          height={11}
+                          width={40}
+                          height={40}
                           className="rounded-full"
                           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                          alt="Roberta Casas image"
+                          alt="image"
                         />
                         <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-gray-700">
                           <svg
@@ -244,11 +244,11 @@ export default function Nav() {
                     >
                       <div className="flex-shrink-0">
                         <Image
-                          width={11}
-                          height={11}
+                          width={40}
+                          height={40}
                           className="rounded-full"
                           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
-                          alt="Robert image"
+                          alt="image"
                         />
                         <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-purple-500 rounded-full border border-white dark:border-gray-700">
                           <svg

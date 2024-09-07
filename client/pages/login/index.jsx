@@ -47,7 +47,7 @@ export default function LoginPage() {
       dispatch(setUser({ user }));
       setEmail("");
       setPassword("");
-      router.push("/");
+      router.push("/dashboard");
     } catch (err) {
       if (!err.status) {
         setErrMsg("No Server Response");
@@ -66,7 +66,7 @@ export default function LoginPage() {
   const errClass = errMsg ? "border-red-500" : "border-red-500";
 
   return (
-    <div className="bg-gray-900 py-6">
+    <div className="bg-gray-900 min-h-screen flex items-center justify-center">
       <div className="max-w-[25rem] w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 bg-white shadow-md shadow-slate-600">
         <div className="flex flex-row gap-2 items-center mb-5">
           <img

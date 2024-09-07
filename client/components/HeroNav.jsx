@@ -7,7 +7,7 @@ const HeroNav = () => {
         <div className="flex flex-col items-center justify-center text-center">
           <div className="flex justify-between items-center w-full pt-3">
             <img
-              src="/school1.jpg"
+              src="/logo-icon.png"
               alt="logo"
               className="w-9 h-9 object-contain rounded-full"
             />

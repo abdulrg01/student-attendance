@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import Home from "./_components/Home";
 
 export default function index() {
   return (
-    <div>index</div>
-  )
+    <div>
+      <Home />
+    </div>
+  );
 }

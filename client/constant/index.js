@@ -3,7 +3,7 @@ import { GraduationCap, Hand, HomeIcon } from "lucide-react";
 export const navLinks = [
   {
     label: "Dashboard",
-    route: "/",
+    route: "/dashboard",
     icon: HomeIcon,
   },
   {
